@@ -5,11 +5,11 @@ import java.util.ResourceBundle;
 
 public class TranslationManager {
 
-    private Locale defaultLocale = Locale.of(System.getenv("DEFAULT_LOCAL"));
+    private final Locale defaultLocale = Locale.of(System.getenv("DEFAULT_LOCAL"));
 
 
     public String translate(String key) {
-        return this.translate(Locale.US, key);
+        return this.translate(this.defaultLocale, key);
     }
 
     public String translate(Locale locale, String key) {
